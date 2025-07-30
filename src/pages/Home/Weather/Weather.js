@@ -14,6 +14,13 @@ import {
 export default function Weather() {
   const [inputCity, setInputCity] = useState("");
   const [city, setCity] = useState("New York");
+  const iconMap = {
+    clear: "/weatherImg/clear.png",
+    cloud: "/weatherImg/cloud.png",
+    drizzle: "/weatherImg/drizzle.png",
+    rain: "/weatherImg/rain.png",
+    snow: "/weatherImg/snow.png",
+  };
 
   const fetchWeather = async (city) => {
     const res = await axios.get(
@@ -26,6 +33,19 @@ export default function Weather() {
     if (!inputCity.trim()) return;
     setCity(inputCity);
     refetch();
+  };
+
+  const getIcon = (desc) => {
+    if (!desc) return iconMap.clear;
+    const lowerDesc = desc.toLowerCase();
+    if (lowerDesc.includes("clear")) return iconMap.clear;
+    if (lowerDesc.includes("clouds")) return iconMap.cloud;
+    if (lowerDesc.includes("drizzle")) return iconMap.drizzle;
+    if (lowerDesc.includes("rain")) return iconMap.rain;
+    if (lowerDesc.includes("thunderstorm")) return iconMap.rain;
+    if (lowerDesc.includes("mist")) return iconMap.rain;
+    if (lowerDesc.includes("snow")) return iconMap.snow;
+    return iconMap.clear;
   };
 
   const [tempType, setTempType] = useState(true);
@@ -50,9 +70,15 @@ export default function Weather() {
         city: weather.name,
         humidity: weather.main.humidity,
         wind: Math.round(weather.wind.speed * 3.6),
-        description: weather.weather[0].description,
+        description: weather.weather[0].main,
       }
     : null;
+
+  useEffect(() => {
+    if (weather) {
+      console.log(weather);
+    }
+  }, [weather]);
 
   return (
     <div className={style.weatherContainer}>
@@ -70,7 +96,7 @@ export default function Weather() {
 
       <div className={style.weatherImage}>
         <img
-          src="/weatherImg/clear.png"
+          src={getIcon(weatherData?.description)}
           alt="Weather"
           width="180px"
           height="180px"
