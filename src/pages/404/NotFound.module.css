@@ -1,0 +1,12 @@
+.notFound {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 61.6px);
+}
+.title {
+  font-size: 3rem;
+  color: white;
+  text-shadow: 2px 5px 5px rgba(0, 0, 0, 0.5);
+}

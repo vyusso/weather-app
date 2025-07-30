@@ -1,0 +1,8 @@
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* subtracts the height of the navbar */
+  min-height: calc(100vh - 61.6px);
+  /* background-color: #b6d1fa; */
+}
