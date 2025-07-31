@@ -1,0 +1,114 @@
+/* weather image */
+.weatherImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* weather info */
+.weatherInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.weatherInfo h1 {
+  font-size: 4rem;
+  font-weight: 300;
+}
+
+.weatherInfo h2 {
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: 3px;
+  margin-bottom: 0.5rem;
+}
+
+.weatherDescription {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #cccccc;
+  text-transform: capitalize;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.tempType {
+  position: absolute;
+  top: 50px;
+  right: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.tempType button {
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.tempType button:hover {
+  color: rgb(212, 212, 212);
+}
+
+.tempType p {
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+/* more info */
+.moreInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  color: white;
+  gap: 1rem;
+}
+
+.spacer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.moreInfoIcon {
+  font-size: 1.5rem;
+}
+
+.moreInfo p {
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-align: start;
+}
+
+.topInfo {
+  font-size: 1.2rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-align: start;
+}
+
+.bottomInfo {
+  font-size: 0.8rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-align: start;
+}
+
+.moreInfoData {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
